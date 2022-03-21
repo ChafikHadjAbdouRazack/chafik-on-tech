@@ -20,28 +20,47 @@
             <div class="social-share-style-1 mt--40">
                 <span class="title">find with me</span>
                 <ul class="social-share d-flex liststyle">
-                    <li class="facebook"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook">
+                    <li class="facebook"><a
+                            href="<?php echo cot_get_theme_option('cot_facebook_url'); ?>"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-facebook">
                                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                             </svg></a>
                     </li>
-                    <li class="twitter"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    <li class="twitter"><a
+                            href="<?php echo cot_get_theme_option('cot_twitter_url'); ?>"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-twitter">
+
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                </path>
+
+
                             </svg></a>
                     </li>
-                    <li class="linkedin"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+                    <li class="linkedin"><a
+                            href="<?php echo cot_get_theme_option('cot_linkedin_url'); ?>"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-linkedin">
                                 <path
                                     d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
                                 </path>
                                 <rect x="2" y="9" width="4" height="12"></rect>
                                 <circle cx="4" cy="4" r="2"></circle>
+                            </svg></a>
+                    </li>
+                    <li class="git-hub"><a
+                            href="<?php echo cot_get_theme_option('cot_github_url'); ?>"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-git-hub">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
                             </svg></a>
                     </li>
                 </ul>
@@ -66,7 +85,7 @@
                         <div class="content">
                             <div class="inner">
                                 <span class="subtitle">Welcome to my world</span>
-                                <h1 class="title">Hi, I’m <span>Jone Lee</span><br>
+                                <h1 class="title">Hi, I’m <span><?php echo cot_get_theme_option('cot_contact_name'); ?></span><br>
                                     <span class="header-caption" id="page-top">
                                         <!-- type headline start-->
                                         <span class="cd-headline clip is-full-width">
@@ -94,28 +113,26 @@
                                     <div class="social-share-inner-left">
                                         <span class="title">find with me</span>
                                         <ul class="social-share d-flex liststyle">
-                                            <li class="facebook"><a href="#"><i data-feather="facebook"></i></a>
+                                            <li class="facebook"><a
+                                                    href="<?php echo cot_get_theme_option('cot_facebook_url'); ?>"><i
+                                                        data-feather="facebook"></i></a>
                                             </li>
-                                            <li class="instagram"><a href="#"><i data-feather="instagram"></i></a>
+                                            <li class="twitter"><a
+                                                    href="<?php echo cot_get_theme_option('cot_twitter_url'); ?>"><i
+                                                        data-feather="twitter"></i></a>
                                             </li>
-                                            <li class="linkedin"><a href="#"><i data-feather="linkedin"></i></a>
+                                            <li class="linkedin"><a
+                                                    href="<?php echo cot_get_theme_option('cot_linkedin_url'); ?>"><i
+                                                        data-feather="linkedin"></i></a>
+                                            </li>
+                                            <li class="github"><a
+                                                    href="<?php echo cot_get_theme_option('cot_github_url'); ?>"><i
+                                                        data-feather="github"></i></a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12 mt_mobile--30">
-                                    <div class="skill-share-inner">
-                                        <span class="title">best skill on</span>
-                                        <ul class="skill-share d-flex liststyle">
-                                            <li><img src="<?php echo get_template_directory_uri().'/assets/images/icons/icons-01.png'?>"
-                                                    alt="Icons Images"></li>
-                                            <li><img src="<?php echo get_template_directory_uri().'/assets/images/icons/icons-02.png'?>"
-                                                    alt="Icons Images"></li>
-                                            <li><img src="<?php echo get_template_directory_uri().'/assets/images/icons/icons-03.png'?>"
-                                                    alt="Icons Images"></li>
-                                        </ul>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -123,7 +140,7 @@
                     <div class="order-1 order-lg-2 col-lg-5">
                         <div class="thumbnail">
                             <div class="inner">
-                                <img src="<?php echo get_template_directory_uri().'/assets/images/slider/banner-01.png'?>"
+                                <img src="<?php echo wp_get_attachment_image_src(cot_get_theme_option('contact_img1'))[0]; ?>"
                                     alt="Personal Portfolio Images">
                             </div>
                         </div>
@@ -570,24 +587,36 @@
                 <div class="col-lg-5">
                     <div class="contact-about-area">
                         <div class="thumbnail">
-                            <img src="assets/images/contact/contact1.png" alt="contact-img">
+                            <img src="<?php echo wp_get_attachment_image_src(cot_get_theme_option('contact_img2'))[0]; ?>"
+                                alt="contact-img">
                         </div>
                         <div class="title-area">
-                            <h4 class="title">Nevine Acotanza</h4>
-                            <span>Chief Operating Officer</span>
+                            <h4 class="title"><?php echo cot_get_theme_option('cot_contact_name') ?>
+                            </h4>
                         </div>
                         <div class="description">
                             <p>I am available for freelance work. Connect with me via and call in to my account.
                             </p>
-                            <span class="phone">Phone: <a href="tel:01941043264">+01234567890</a></span>
-                            <span class="mail">Email: <a href="mailto:admin@example.com">admin@example.com</a></span>
+                            <span class="phone">Phone: <a
+                                    href="tel:<?php echo cot_get_theme_option('cot_contact_telephone')  ?>"><?php echo cot_get_theme_option('cot_contact_telephone')  ?></a></span>
+                            <span class="mail">Email: <a
+                                    href="mailto:<?php echo cot_get_theme_option('cot_contact_email')  ?>"><?php echo cot_get_theme_option('cot_contact_email')  ?></a></span>
                         </div>
                         <div class="social-area">
                             <div class="name">FIND WITH ME</div>
                             <div class="social-icone">
-                                <a href="#"><i data-feather="facebook"></i></a>
-                                <a href="#"><i data-feather="linkedin"></i></a>
-                                <a href="#"><i data-feather="instagram"></i></a>
+                                <a
+                                    href="<?php echo cot_get_theme_option('cot_facebook_url'); ?>"><i
+                                        data-feather="facebook"></i></a>
+                                <a
+                                    href="<?php echo cot_get_theme_option('cot_linkedin_url'); ?>"><i
+                                        data-feather="linkedin"></i></a>
+                                <a
+                                    href="<?php echo cot_get_theme_option('cot_twitter_url'); ?>"><i
+                                        data-feather="twitter"></i></a>
+                                <a
+                                    href="<?php echo cot_get_theme_option('cot_github_url'); ?>"><i
+                                        data-feather="github"></i></a>
                             </div>
                         </div>
                     </div>

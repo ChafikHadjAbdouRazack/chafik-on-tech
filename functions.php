@@ -119,3 +119,17 @@ function custom_mailer(PHPMailer $phpMailer)
     $phpMailer->Password = '_tYsx0O1dcwzh0Jf';
     $phpMailer->isSMTP();
 }
+
+add_action('admin_enqueue_scripts', 'cot_include_js');
+function cot_include_js()
+{
+
+    // I recommend to add additional conditions just to not to load the scipts on each page
+
+    if (! did_action('wp_enqueue_media')) {
+        wp_enqueue_media();
+    }
+
+    wp_register_script('myuploadscript', get_stylesheet_directory_uri() . '/assets/js/upload_file.js', array( 'jquery' ), '1.1', true);
+    wp_enqueue_script('myuploadscript');
+}

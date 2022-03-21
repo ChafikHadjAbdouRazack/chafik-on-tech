@@ -36,7 +36,7 @@ class COT_Theme_Options
     public static function get_theme_option($id)
     {
         $options = self::get_theme_options();
-        if (!isset($options[$id])) {
+        if (isset($options[$id])) {
             return $options[$id];
         }
     }
@@ -55,6 +55,7 @@ class COT_Theme_Options
     public static function register_settings()
     {
         register_setting('cot_theme_options', 'cot_theme_options', array('COT_Theme_option','sanitize'));
+
         // Add settings section
         add_settings_section('cot_social_media_section', 'Social Media Settings', array('COT_Theme_Options','cot_display_section'), 'cot_theme_options.php');
         // Create  field
@@ -133,16 +134,35 @@ class COT_Theme_Options
     public static function cot_contact_img1()
     {
         $options = get_option('cot_theme_options');
-        echo "<input id='cot_contact_img1' name='cot_theme_options[cot_contact_img1]' type='file' value='".esc_attr(isset($options['cot_contact_img1']) ?$options['cot_contact_img1'] :'')."'/>";
+        if (isset($options['contact_img1'])) {
+            $image = wp_get_attachment_image_src($options['contact_img1']);
+            echo "<a href='#' id='cot_contact_img1'><img src='".$image[0]."'.</a>
+            <a href='#' id='cot_contact_img1_rmv'>Remove image</a>
+                 <input  name='cot_theme_options[contact_img1]' type='hidden' value='".$options['contact_img1']."' />";
+        } else {
+            echo " <a href='#' id='cot_contact_img2'>Upload image</a>
+            <a href='#' id='cot_contact_img2_rmv' style='display:none'>Remove image</a>
+                 <input  name='cot_theme_options[contact_img2]' type='hidden' value='' />";
+        }
     }
     public static function cot_contact_img2()
     {
         $options = get_option('cot_theme_options');
-        echo "<input id='cot_contact_img2' name='cot_theme_options[cot_contact_img2]' type='file' value='".esc_attr(isset($options['cot_contact_img2']) ?$options['cot_contact_img2'] :'')."'/>";
+        if (isset($options['contact_img2'])) {
+            $image = wp_get_attachment_image_src($options['contact_img2']);
+            echo "<a href='#' id='cot_contact_img2'><img src='".$image[0]."'.</a>
+            <a href='#' id='cot_contact_img2_rmv'>Remove image</a>
+                 <input  name='cot_theme_options[contact_img2]' type='hidden' value='".$options['contact_img2']."' />";
+        } else {
+            echo " <a href='#' id='cot_contact_img2'>Upload image</a>
+            <a href='#' id='cot_contact_img2_rmv' style='display:none'>Remove image</a>
+                 <input  name='cot_theme_options[contact_img2]' type='hidden' value='' />";
+        }
     }
     public static function cot_display_section($section)
     {
     }
+
     public static function sanitize($options)
     {
         if ($options) {
