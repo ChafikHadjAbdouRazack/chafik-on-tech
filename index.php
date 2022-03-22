@@ -486,87 +486,40 @@
             </div>
             <div class="row row--25 mt--30 mt_md--10 mt_sm--10">
 
+                <?php if (have_posts()): ?>
+                <?php while (have_posts()): ?>
+                <?php the_post() ?>
                 <!-- Start Single blog -->
                 <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="400" data-aos-once="true"
                     class="col-lg-6 col-xl-4 mt--30 col-md-6 col-sm-12 col-12 mt--30">
                     <div class="rn-blog" data-toggle="modal" data-target="#exampleModalCenters">
                         <div class="inner">
                             <div class="thumbnail">
+
                                 <a href="javascript:void(0)">
-                                    <img src="assets/images/blog/blog-01.jpg" alt="Personal Portfolio Images">
+                                    <?php echo get_the_post_thumbnail(); ?>
                                 </a>
                             </div>
                             <div class="content">
                                 <div class="category-info">
                                     <div class="category-list">
-                                        <a href="javascript:void(0)">Canada</a>
+                                        <a href="#"> <?php echo wp_get_post_terms(get_the_ID(), 'category')[0]->name; ?>
+                                        </a>
                                     </div>
                                     <div class="meta">
-                                        <span><i class="feather-clock"></i> 2 min read</span>
+                                        <span><i class="feather-clock"></i><?php the_date() ?></span>
                                     </div>
                                 </div>
-                                <h4 class="title"><a href="javascript:void(0)">T-shirt design is the part of design
+                                <h4 class="title"><a
+                                        href="<?php the_permalink() ?>"><?php the_title() ?>
                                         <i class="feather-arrow-up-right"></i></a></h4>
                             </div>
                         </div>
                     </div>
                 </div>
+                <?php endwhile; ?>
                 <!-- End Single blog -->
-
-                <!-- Start Single blog -->
-                <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="600" data-aos-once="true"
-                    class="col-lg-6 col-xl-4 mt--30 col-md-6 col-sm-12 col-12 mt--30">
-                    <div class="rn-blog" data-toggle="modal" data-target="#exampleModalCenters">
-                        <div class="inner">
-                            <div class="thumbnail">
-                                <a href="javascript:void(0)">
-                                    <img src="assets/images/blog/blog-02.jpg" alt="Personal Portfolio Images">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <div class="category-info">
-                                    <div class="category-list">
-                                        <a href="javascript:void(0)">Development</a>
-                                    </div>
-                                    <div class="meta">
-                                        <span><i class="feather-clock"></i> 2 hour read</span>
-                                    </div>
-                                </div>
-                                <h4 class="title"><a href="javascript:void(0)">The services provide for design <i
-                                            class="feather-arrow-up-right"></i></a></h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single blog -->
-
-                <!-- Start Single blog -->
-                <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="800" data-aos-once="true"
-                    class="col-lg-6 col-xl-4 mt--30 col-md-6 col-sm-12 col-12 mt--30">
-                    <div class="rn-blog" data-toggle="modal" data-target="#exampleModalCenters">
-                        <div class="inner">
-                            <div class="thumbnail">
-                                <a href="javascript:void(0)">
-                                    <img src="assets/images/blog/blog-03.jpg" alt="Personal Portfolio Images">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <div class="category-info">
-                                    <div class="category-list">
-                                        <a href="javascript:void(0)">Application</a>
-                                    </div>
-                                    <div class="meta">
-                                        <span><i class="feather-clock"></i> 5 min read</span>
-                                    </div>
-                                </div>
-                                <h4 class="title"><a href="javascript:void(0)">Mobile app landing design & app
-                                        maintain<i class="feather-arrow-up-right"></i></a></h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single blog -->
-
+                <?php endif ;?>
             </div>
         </div>
     </div>

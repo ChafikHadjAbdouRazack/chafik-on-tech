@@ -1,4 +1,5 @@
-<?php get_header()?>
+<?php get_header();?>
+
 <main class="main-page-wrapper">
 
     <div class="rn-service-area rn-section-gap section-separator">
@@ -6,7 +7,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <h3><?php echo the_title(); ?>
+                        <h3>
+                            <?php  ?>
                         </h3>
 
                     </div>
@@ -14,7 +16,7 @@
                 </div>
 
                 <div class="row">
-                    <?php echo the_content();?>
+                    Category
                 </div>
 
             </div>
@@ -24,4 +26,5 @@
     </div>
 
 </main>
-<?php get_footer();
+
+<?php  get_footer();
