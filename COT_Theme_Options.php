@@ -73,6 +73,7 @@ class COT_Theme_Options
             'cot_theme_options.php',
             'cot_social_media_section'
         );
+
         add_settings_field(
             'cot_github_url',
             'GitHub Profile Url',
@@ -80,6 +81,7 @@ class COT_Theme_Options
             'cot_theme_options.php',
             'cot_social_media_section'
         );
+
         add_settings_field(
             'cot_linkedin_url',
             'LinkedIn Profile Url',
@@ -94,6 +96,7 @@ class COT_Theme_Options
         add_settings_field('cot_contact_telephone', 'Contact Telephone', array('COT_Theme_Options','cot_contact_telephone'), 'cot_theme_options.php', 'cot_contact_info_section');
         add_settings_field('cot_contact_img1', 'Contact  Image(1)', array('COT_Theme_Options','cot_contact_img1'), 'cot_theme_options.php', 'cot_contact_info_section');
         add_settings_field('cot_contact_img2', 'Contact  Image(2)', array('COT_Theme_Options','cot_contact_img2'), 'cot_theme_options.php', 'cot_contact_info_section');
+        add_settings_field('cot_contact_description', 'Contact Description', array('COT_Theme_Options','cot_contact_description'), 'cot_theme_options.php', 'cot_contact_info_section');
     }
     public static function cot_facebook_url()
     {
@@ -120,6 +123,11 @@ class COT_Theme_Options
     {
         $options = get_option('cot_theme_options');
         echo "<input id='cot_contact_name' name='cot_theme_options[cot_contact_name]' type='text' value='".esc_attr(isset($options['cot_contact_name']) ?$options['cot_contact_name'] :'')."'/>";
+    }
+    public static function cot_contact_description()
+    {
+        $options = get_option('cot_theme_options');
+        echo "<textarea id='cot_contact_description' name='cot_theme_options[cot_contact_description]' rows='5' cols='33' >".esc_attr(isset($options['cot_contact_description']) ?$options['cot_contact_description'] :'').'</textarea>' ;
     }
     public static function cot_contact_email()
     {

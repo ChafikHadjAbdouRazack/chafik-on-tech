@@ -6,8 +6,11 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title><?php bloginfo('name'); ?>
     </title>
+    <meta
+        charset="<?php bloginfo('charset'); ?>">
     <meta name="robots" content="noindex, follow" />
-    <meta name="description" content="">
+    <meta name="description"
+        content="<?php bloginfo('description') ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon"
@@ -26,8 +29,8 @@
             <div class="col-lg-2 col-6">
                 <div class="header-left">
                     <div class="logo">
-                        <a href="#">
-                            <img src="assets/images/logo/logo-dark.png" alt="logo">
+                        <a href="/">
+                            <?php bloginfo('name') ?>
                         </a>
                     </div>
                 </div>
@@ -39,16 +42,7 @@
                     <nav id="sideNav" class="mainmenu-nav navbar-example2 d-none d-xl-block">
                         <!-- Start Mainmanu Nav -->
                         <?php wp_nav_menu(array( 'menu_class' => 'primary-menu nav nav-pills', 'container' => 'ul', 'add_li_class'  => 'nav-item',"link_class" => "nav-link smoth-animation active")); ?>
-                        <!--<ul class="primary-menu nav nav-pills">
-                        <li class="nav-item"><a class="nav-link smoth-animation active" href="#home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link smoth-animation" href="#features">Features</a></li>
-                        <li class="nav-item"><a class="nav-link smoth-animation" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link smoth-animation" href="#resume">Resume</a></li>
-                        <li class="nav-item"><a class="nav-link smoth-animation" href="#clients">Clients</a></li>
-                        <li class="nav-item"><a class="nav-link smoth-animation" href="#pricing">Pricing</a></li>
-                        <li class="nav-item"><a class="nav-link smoth-animation" href="#blog">blog</a></li>
-                        <li class="nav-item"><a class="nav-link smoth-animation" href="#contacts">Contact</a></li>
-                    </ul>-->
+
                         <!-- End Mainmanu Nav -->
                     </nav>
                     <!-- Start Header Right  -->

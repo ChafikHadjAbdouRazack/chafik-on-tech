@@ -5,8 +5,8 @@
             <div class="col-lg-12">
                 <div class="footer-area text-center">
                     <div class="logo">
-                        <a href="#">
-                            <img src="assets/images/logo/logo-vertical-dark.png" alt="logo">
+                        <a href="/">
+                            <?php bloginfo('name') ?>
                         </a>
                     </div>
                     <p class="description mt--30">© <?php echo date('Y'); ?>. All
@@ -30,7 +30,7 @@
         formData.append('action', 'contact_form');
         formData.append('nonce',
             '<?php echo wp_create_nonce('contact_form')  ?>'
-            );
+        );
         formData.append('contact_form', form);
         $.ajax(endpoint, {
             type: 'POST',

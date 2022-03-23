@@ -134,3 +134,51 @@ function cot_include_js()
     wp_enqueue_script('myuploadscript');
 }
 add_theme_support('post-thumbnails');
+
+function portfolio_post_type()
+{
+    $argc = array(
+        'labels'=>array(
+            'name'=>"Portfolios",
+            'singular_name'=>'Portfolio'
+        ),
+        'menu_icon'=>'dashicons-portfolio',
+        'has_archive'=>true,
+        'public'=>true,
+        'has_archive'=>true,
+        'supports'=>array('title','editor','thumbnail')
+    );
+    register_post_type('portfolios', $argc);
+}
+add_action('init', 'portfolio_post_type');
+function portfolio_taxonomy()
+{
+    $argc = array(
+            'labels'=>array(
+                'name'=>"Categories",
+                'singular_name'=>"Category"
+            ),
+            'public'=>true,
+            'hierarchical'=>true
+    );
+
+    register_taxonomy('categories', array('portfolios'), $argc);
+}
+
+add_action('init', 'portfolio_taxonomy');
+function skill_post_type()
+{
+    $argc = array(
+        'labels'=>array(
+            'name'=>"Skills",
+            'singular_name'=>'Skill'
+        ),
+        'menu_icon'=>'dashicons-editor-code',
+        'has_archive'=>false,
+        'public'=>true,
+        'supports'=>array('title','editor','thumbnail')
+    );
+    register_post_type('skills', $argc);
+}
+
+add_action('init', 'skill_post_type');
