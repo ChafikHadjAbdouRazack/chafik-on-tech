@@ -83,26 +83,44 @@ function contactForm()
         wp_send_json_error('Formulaire invalide', 401);
         die();
     }
-    $data = [];
-    wp_parse_str($_POST['contact_form'], $data);
-    $admin_email = get_option('admin_email');
-    $headers[] ='Content-Type: text/html; charset=UTF-8';
-    $headers[]='From: Chafik On Tech <'.$admin_email.'>';
-    $headers[]= 'Reply-To:'.$data['contact-email'];
-    $send_to = $admin_email;
-    $message= '';
-    foreach ($data as $key => $value) {
-        $message.='<strong>'.$key.'</strong>:'.$value.' <br/>';
+    if(isset($_POST['g-recaptcha-response'])){
+        $captcha=$_POST['g-recaptcha-response'];
     }
-    try {
-        if (wp_mail($send_to, $data['subject'], $message, $headers)) {
-            wp_send_json_success("Email sent");
-        } else {
-            wp_send_json_error('Email error');
+    if (!$captcha) {
+        wp_send_json_error('Please check the captcha form');
+        die();
+    }
+    $secretKey = "6LcyOQYfAAAAAJ5opVaHfSL9srEWvFHFn9Tz5GcH";
+    $ip = $_SERVER['REMOTE_ADDR'];
+    // post request to server
+    $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) .  '&response=' . urlencode($captcha);
+    $response = file_get_contents($url);
+    $responseKeys = json_decode($response,true);
+    if($responseKeys["success"]) {
+        $data = [];
+        wp_parse_str($_POST['contact_form'], $data);
+        $admin_email = get_option('admin_email');
+        $headers[] ='Content-Type: text/html; charset=UTF-8';
+        $headers[]='From: Chafik On Tech <'.$admin_email.'>';
+        $headers[]= 'Reply-To:'.$data['contact-email'];
+        $send_to = $admin_email;
+        $message= '';
+        foreach ($data as $key => $value) {
+            $message.='<strong>'.$key.'</strong>:'.$value.' <br/>';
         }
-    } catch (\Exception $e) {
-        wp_send_json_error($e->getMessage());
+        try {
+            if (wp_mail($send_to, $data['subject'], $message, $headers)) {
+                wp_send_json_success("Email sent");
+            } else {
+                wp_send_json_error('Email error');
+            }
+        } catch (\Exception $e) {
+            wp_send_json_error($e->getMessage());
+        }
+    } else {
+        wp_send_json_error("Captcha invalid");
     }
+
 }
 
 add_action('phpmailer_init', 'custom_mailer');
