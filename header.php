@@ -15,6 +15,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon"
         href="<?php echo get_template_directory_uri().'/assets/images/favicon.ico' ?>">
+        <script src='https://www.google.com/recaptcha/api.js' async defer></script>
     <!-- CSS
     ============================================ -->
     <?php wp_head(); ?>
