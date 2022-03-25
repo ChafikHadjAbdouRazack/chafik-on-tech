@@ -412,7 +412,7 @@
                                         <span>SEND MESSAGE</span>
                                         <i data-feather="arrow-right"></i>
                                     </button>
-                                    <div class="g-recaptcha" data-sitekey="6Lc8iQ8fAAAAAFa7fzV84R3dZKHCrA_ZPECNiB1h"></div>
+                                    <div class="g-recaptcha" data-sitekey="<?php echo $RECAPTCHA_SITE_KEY; ?>"></div>
                                 </div>
                             </form>
                         </div>

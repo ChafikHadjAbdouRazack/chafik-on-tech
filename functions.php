@@ -90,7 +90,7 @@ function contactForm()
         wp_send_json_error('Please check the captcha form');
         die();
     }
-    $secretKey = "6Lc8iQ8fAAAAADQIqUsTQ1NwOuojU28oFMr0mHFa";
+    $secretKey = $RECAPTCHA_SECRET_KEY;
     $ip = $_SERVER['REMOTE_ADDR'];
     // post request to server
     $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) .  '&response=' . urlencode($captcha);
@@ -129,12 +129,12 @@ function custom_mailer(PHPMailer $phpMailer)
 {
     $phpMailer->setFrom('contact@chafikontech.com', 'Chafik On Tech');
     $phpMailer->addAddress('contact@chafikontech.com', 'Chafik On Tech');
-    $phpMailer->Host="plesk.wetillix.com";
+    $phpMailer->Host=$EMAIL_SERVER;
     $phpMailer->Port=587;
     $phpMailer->SMTPAuth=true;
     $phpMailer->SMTPSecure ='tls';
-    $phpMailer->Username = 'contact@chafikontech.com';
-    $phpMailer->Password = '_tYsx0O1dcwzh0Jf';
+    $phpMailer->Username = $EMAIL_USERNAME;
+    $phpMailer->Password = $EMAIL_PASSWORD;
     $phpMailer->isSMTP();
 }
 
