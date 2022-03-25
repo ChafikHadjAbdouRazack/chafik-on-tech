@@ -90,7 +90,7 @@ function contactForm()
         wp_send_json_error('Please check the captcha form');
         die();
     }
-    $secretKey = "6LcyOQYfAAAAAJ5opVaHfSL9srEWvFHFn9Tz5GcH";
+    $secretKey = "6Lc8iQ8fAAAAADQIqUsTQ1NwOuojU28oFMr0mHFa";
     $ip = $_SERVER['REMOTE_ADDR'];
     // post request to server
     $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) .  '&response=' . urlencode($captcha);
