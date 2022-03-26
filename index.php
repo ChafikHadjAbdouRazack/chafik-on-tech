@@ -91,9 +91,10 @@
                                             <span>a </span>
                                             <!-- ROTATING TEXT -->
                                             <span class="cd-words-wrapper">
-                                                <b class="is-visible">Developer.</b>
-                                                <b class="is-hidden">Professional Coder.</b>
-                                                <b class="is-hidden">Developer.</b>
+                                                <b class="is-visible">Software Developer.</b>
+                                                <b class="is-hidden">Network Engenier.</b>
+                                                <b class="is-hidden">Problem Solver</b>
+                                                <b class="is-hidden">Hacker by Night</b>
                                             </span>
                                         </span>
                                         <!-- type headline end -->
