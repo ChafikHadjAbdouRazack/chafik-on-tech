@@ -83,7 +83,7 @@ function contactForm()
         wp_send_json_error('Formulaire invalide', 401);
         die();
     }
-    if(isset($_POST['g-recaptcha-response'])){
+    if (isset($_POST['g-recaptcha-response'])) {
         $captcha=$_POST['g-recaptcha-response'];
     }
     if (!$captcha) {
@@ -95,8 +95,8 @@ function contactForm()
     // post request to server
     $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) .  '&response=' . urlencode($captcha);
     $response = file_get_contents($url);
-    $responseKeys = json_decode($response,true);
-    if($responseKeys["success"]) {
+    $responseKeys = json_decode($response, true);
+    if ($responseKeys["success"]) {
         $data = [];
         wp_parse_str($_POST['contact_form'], $data);
         $admin_email = get_option('admin_email');
@@ -120,7 +120,6 @@ function contactForm()
     } else {
         wp_send_json_error("Captcha invalid");
     }
-
 }
 
 add_action('phpmailer_init', 'custom_mailer');
