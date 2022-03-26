@@ -413,7 +413,7 @@
                                         <i data-feather="arrow-right"></i>
                                     </button>
                                     <div class="g-recaptcha"
-                                        data-sitekey="<?php echo $RECAPTCHA_SITE_KEY ?>">
+                                        data-sitekey="<?php echo RECAPTCHA_SITE_KEY ?>">
                                     </div>
                                 </div>
                             </form>

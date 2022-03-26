@@ -128,12 +128,12 @@ function custom_mailer(PHPMailer $phpMailer)
 {
     $phpMailer->setFrom('contact@chafikontech.com', 'Chafik On Tech');
     $phpMailer->addAddress('contact@chafikontech.com', 'Chafik On Tech');
-    $phpMailer->Host=$EMAIL_SERVER;
+    $phpMailer->Host= EMAIL_SERVER;
     $phpMailer->Port=587;
     $phpMailer->SMTPAuth=true;
     $phpMailer->SMTPSecure ='tls';
-    $phpMailer->Username = $EMAIL_USERNAME;
-    $phpMailer->Password = $EMAIL_PASSWORD;
+    $phpMailer->Username = EMAIL_USERNAME;
+    $phpMailer->Password = EMAIL_PASSWORD;
     $phpMailer->isSMTP();
 }
 
