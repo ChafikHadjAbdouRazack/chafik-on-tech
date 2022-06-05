@@ -138,7 +138,7 @@
                     <div class="order-1 order-lg-2 col-lg-5">
                         <div class="thumbnail">
                             <div class="inner">
-                                <img src="<?php echo wp_get_attachment_image_src(cot_get_theme_option('contact_img1'))[0]; ?>"
+                                <img src="<?php echo wp_get_attachment_image_src(cot_get_theme_option('contact_img1'),'full')[0]; ?>"
                                     alt="Personal Portfolio Images">
                             </div>
                         </div>
