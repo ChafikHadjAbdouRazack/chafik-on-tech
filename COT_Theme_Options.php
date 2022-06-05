@@ -148,9 +148,9 @@ class COT_Theme_Options
             <a href='#' id='cot_contact_img1_rmv'>Remove image</a>
                  <input  name='cot_theme_options[contact_img1]' type='hidden' value='".$options['contact_img1']."' />";
         } else {
-            echo " <a href='#' id='cot_contact_img2'>Upload image</a>
-            <a href='#' id='cot_contact_img2_rmv' style='display:none'>Remove image</a>
-                 <input  name='cot_theme_options[contact_img2]' type='hidden' value='' />";
+            echo " <a href='#' id='cot_contact_img1'>Upload image</a>
+            <a href='#' id='cot_contact_img1_rmv' style='display:none'>Remove image</a>
+                 <input  name='cot_theme_options[contact_img1]' type='hidden' value='' />";
         }
     }
     public static function cot_contact_img2()
