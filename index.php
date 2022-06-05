@@ -327,7 +327,7 @@
                 <div class="col-lg-5">
                     <div class="contact-about-area">
                         <div class="thumbnail">
-                            <img src="<?php echo wp_get_attachment_image_src(cot_get_theme_option('contact_img2'))[0]; ?>"
+                            <img src="<?php echo wp_get_attachment_image_src(cot_get_theme_option('contact_img2'),'full')[0]; ?>"
                                 alt="contact-img">
                         </div>
                         <div class="title-area">
