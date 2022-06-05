@@ -19,14 +19,6 @@
             <div class="social-share-style-1 mt--40">
                 <span class="title">find with me</span>
                 <ul class="social-share d-flex liststyle">
-                    <li class="facebook"><a
-                            href="<?php echo cot_get_theme_option('cot_facebook_url'); ?>"><svg
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-facebook">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                            </svg></a>
-                    </li>
                     <li class="twitter"><a
                             href="<?php echo cot_get_theme_option('cot_twitter_url'); ?>"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -111,10 +103,6 @@
                                     <div class="social-share-inner-left">
                                         <span class="title">find with me</span>
                                         <ul class="social-share d-flex liststyle">
-                                            <li class="facebook"><a
-                                                    href="<?php echo cot_get_theme_option('cot_facebook_url'); ?>"><i
-                                                        data-feather="facebook"></i></a>
-                                            </li>
                                             <li class="twitter"><a
                                                     href="<?php echo cot_get_theme_option('cot_twitter_url'); ?>"><i
                                                         data-feather="twitter"></i></a>
@@ -345,9 +333,6 @@
                         <div class="social-area">
                             <div class="name">FIND WITH ME</div>
                             <div class="social-icone">
-                                <a
-                                    href="<?php echo cot_get_theme_option('cot_facebook_url'); ?>"><i
-                                        data-feather="facebook"></i></a>
                                 <a
                                     href="<?php echo cot_get_theme_option('cot_linkedin_url'); ?>"><i
                                         data-feather="linkedin"></i></a>
